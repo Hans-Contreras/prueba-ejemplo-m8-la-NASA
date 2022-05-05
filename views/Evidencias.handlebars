@@ -1,0 +1,16 @@
+<h1>
+  &#128125;</h1>
+<h1>Bienvenido {{nombre}}</h1>  <!-- Renderización dinámica del parametro "nombre" -->
+<h2>Carga una foto de un extraterrestre</h2>
+
+<!-- inclusión del correo electrónico dentro del formulario, agregando inputs ocultos al cliente -->
+<form action="/upload" method="POST" enctype="multipart/form-data" class="mt-4">
+  <input id="foto" type="file" name="foto"  />
+  <!-- Se agregan el inputs con los atributos "name" para poder identificarlos con "fileUpload"  -->
+  <!-- "values" que seran la renderización dinámica de los parámetros que recubimos de la ruta -->
+  <!-- type="hiden" para mantener oculto los inputs al usuario cuando se envien los datos -->
+  <input name="nombre" value="{{nombre}}" type="hidden" />
+  <input name="email" value="{{email}}" type="hidden" />
+
+  <input class="btn bg-light" type="submit" value="¡Subir imagen!" />
+</form>
